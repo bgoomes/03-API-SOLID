@@ -1,32 +1,47 @@
-#APP
+# 03-API-SOLID
 
-GymPass style app.
+API em **Node.js + TypeScript** construída seguindo os princípios **SOLID**, com arquitetura modular (MVC) e foco em boas práticas.  
+O domínio da aplicação é um sistema de **check-in de academias**, inspirado no modelo do *GymPass*.
 
-## RFs (Requisistos funcionais)
+---
 
-- [ ] Deve ser possível se cadastrar;
-- [ ] Deve ser possível se autenticar;
-- [ ] Deve ser possível obter o perfil de um usuario logado;
-- [ ] Deve ser possível obter o numero de checkins realizados pelo usuarios logado;
-- [ ] Deve ser possivel o usuario obter seu historico de check-ins;
-- [ ] Deve ser possivel o usuario buscar academias proximas;
-- [ ] Deve ser possivel o usuario buscar academias pelo nome;
-- [ ] Deve ser possivel o usuario realizar check-in em uma academia;
-- [ ] Deve ser possivel validar o check-in de um usuario;
-- [ ] Deve ser possiel cadastrar uma academia;
+## 🚀 Tecnologias
 
-## RNs (Regras de negócio)
+- **Node.js** + **TypeScript**  
+- **Prisma ORM**  
+- **Express**  
+- **Zod** (validação de dados)  
+- **JWT** (autenticação)  
+- **PostgreSQL**
 
-- [ ] O usuario não deve poder se cadastrar com o e-mail duplicado;
-- [ ] O usuario não pode fazer 2 checkin no mesmo dia;
-- [ ] O usuario não pode fazer check-in se não estiver perto da academia;
-- [ ] O check-in so pode ser validado até 20 min após criado;
-- [ ] A academia só pode ser cadastrada por administradores;
-- [ ] O check-in so pode ser validado por administradores;
+---
 
-## RNFs (Requisitos não funcionais)
+## 📋 Funcionalidades
 
-- [ ] A senha do usuario precisa estar criptografada;
-- [ ] OS dados da aplicação precisam estar persistidos em um banco PostgresSQL;
-- [ ] Todas as listas de dados precisam estar paginadas com 20 itens por paginas;
-- [ ] O Usuario deve ser autenticado por um JWT;
+- Cadastro e autenticação de usuários  
+- Perfil do usuário autenticado  
+- Cadastro e busca de academias (por nome ou localização)  
+- Check-in em academias (com validações de distância e tempo)  
+- Histórico e contagem de check-ins  
+- Validação de check-ins (admin)  
+
+---
+
+## ⚙️ Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/bgoomes/03-API-SOLID.git
+cd 03-API-SOLID
+
+# Instale as dependências
+npm install
+
+# Copie e configure o .env
+cp .env.example .env
+
+# Execute as migrações
+npx prisma migrate dev
+
+# Inicie o servidor
+npm run dev
